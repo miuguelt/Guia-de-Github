@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Aprendizaje: Git y GitHub - SENA</title>
+    <style>
+        :root {
+            --sena-orange: #fc7323;
+            --sena-green: #39a900;
+            --dark-gray: #333;
+            --light-gray: #f4f4f4;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: var(--sena-green);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            color: var(--sena-orange);
+            border-bottom: 2px solid var(--sena-orange);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            color: var(--sena-green);
+            margin-top: 2rem;
+        }
+
+        h4 {
+            color: #555;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--sena-green);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--sena-orange);
+            margin: 1.5rem 0;
+            padding: 1rem;
+            font-style: italic;
+        }
+
+        .code-block {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #eee;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            color: #d63384;
+        }
+
+        .code-block code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--sena-orange);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #e05d0b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-gray);
+            color: white;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Identificación Box */
+        .info-box {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .info-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box strong {
+            color: var(--sena-green);
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container" style="margin: 0 auto;">
+        <h1>Guía de Aprendizaje: Gestión de la Configuración</h1>
+        <p>Git y GitHub | Formato GFPI-F-135</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>1. IDENTIFICACIÓN DE LA GUÍA DE APRENDIZAJE</h2>
+    <div class="info-box">
+        <ul>
+            <li><strong>Denominación del Programa de Formación:</strong> Análisis y Desarrollo de Software (ADSO).</li>
+            <li><strong>Código del Programa de Formación:</strong> 228118.</li>
+            <li><strong>Nombre del Proyecto:</strong> Construcción de software a la medida para el sector empresarial.</li>
+            <li><strong>Fase del Proyecto:</strong> Ejecución.</li>
+            <li><strong>Competencia:</strong> Controlar la calidad del software de acuerdo con los estándares y requisitos técnicos.</li>
+            <li><strong>Resultado de Aprendizaje (RAP):</strong> Gestionar la configuración y el control de versiones del software utilizando herramientas especializadas (Git/GitHub).</li>
+            <li><strong>Duración de la Guía:</strong> 48 horas.</li>
+        </ul>
+    </div>
+
+    <h2>2. PRESENTACIÓN</h2>
+    <p><strong>Estimado Aprendiz:</strong></p>
+    <p>Bienvenido al mundo del desarrollo de software profesional.</p>
+    <p>Imaginen por un momento que tienen una <strong>"Máquina del Tiempo"</strong>. Una máquina que les permite guardar el estado exacto del universo en un momento dado, y si cometen un error catastrófico en el futuro, pueden presionar un botón y regresar a ese punto seguro donde todo funcionaba.</p>
+    <p>En el desarrollo de software, esa máquina del tiempo se llama <strong>Git</strong>.</p>
+    <p>En el "mundo real" de la industria tecnológica, ya no trabajamos enviando correos con asuntos como <em>"proyecto_final.zip"</em>, <em>"proyecto_final_ahora_si.zip"</em> o <em>"proyecto_final_v3_este_si_funciona.rar"</em>. Eso es propenso a errores, pérdida de información y caos.</p>
+    <p>Hoy en día, usamos repositorios profesionales en la nube. Esta guía lo llevará desde los conceptos básicos hasta el flujo de trabajo colaborativo que utilizan empresas como Google, Microsoft y startups de todo el mundo. Aprenderemos a trabajar en equipo sin sobrescribir el trabajo de nuestros compañeros y a mantener la integridad de nuestro código.</p>
+    <p>¡Manos a la obra!</p>
+
+    <h2>3. FORMULACIÓN DE LAS ACTIVIDADES DE APRENDIZAJE</h2>
+
+    <h3>3.1 Actividad de Reflexión Inicial: El Problema del Caos</h3>
+    <div style="background-color: #fff3cd; padding: 15px; border-left: 5px solid #ffc107;">
+        <strong>Situación Problémica:</strong><br>
+        Un equipo de tres desarrolladores (Ana, Beto y Carlos) está trabajando en una página web.
+        <ol>
+            <li>Ana descarga los archivos a su computador y arregla el diseño del menú.</li>
+            <li>Beto descarga los archivos (que no tienen los cambios de Ana) y arregla un error en el pie de página.</li>
+            <li>Ana sube sus cambios al servidor.</li>
+            <li>Beto sube sus cambios al servidor 10 minutos después.</li>
+        </ol>
+        <p><strong>El Desastre:</strong> Como Beto no tenía los cambios de Ana, al guardar su versión, <strong>sobrescribió y borró</strong> todo el trabajo de diseño que hizo Ana. El menú vuelve a estar roto. El equipo entra en conflicto.</p>
+    </div>
+
+    <p><strong>Reflexión:</strong> Responda a las siguientes preguntas en su bitácora o foro de discusión:</p>
+    <ul>
+        <li>¿Alguna vez le ha pasado que pierde un trabajo por no guardar una versión anterior?</li>
+        <li>¿Cómo evitaríamos este desastre en el equipo de Ana y Beto sin usar memorias USB ni correos electrónicos?</li>
+        <li>¿Por qué cree que es importante saber quién hizo qué cambio y cuándo?</li>
+    </ul>
+
+    <h3>3.2 Actividad de Contextualización: Git vs. GitHub</h3>
+    <p>Para entender las herramientas, es vital no confundirlas. Complete el siguiente cuadro comparativo investigando en la web:</p>
+
+    <table>
+        <tr>
+            <th>Característica</th>
+            <th>Git</th>
+            <th>GitHub</th>
+        </tr>
+        <tr>
+            <td><strong>¿Qué es?</strong></td>
+            <td>Sistema de Control de Versiones Distribuido.</td>
+            <td>Plataforma de alojamiento de código en la nube.</td>
+        </tr>
+        <tr>
+            <td><strong>¿Dónde se ejecuta?</strong></td>
+            <td>Localmente (en su computador).</td>
+            <td>Remotamente (en la web/servidores).</td>
+        </tr>
+        <tr>
+            <td><strong>¿Necesita Internet?</strong></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Función principal</strong></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Comando/Acción clave</strong></td>
+            <td><code>git commit</code></td>
+            <td><code>Pull Request</code></td>
+        </tr>
+    </table>
+
+    <h3>3.3 Actividad de Apropiación: Tutorial "Zero to Hero"</h3>
+    <p>Realice las siguientes prácticas secuenciales en su entorno de desarrollo (Visual Studio Code + Git Bash).</p>
+
+    <h4>Nivel 1: La Base (Ciclo de Vida Local)</h4>
+    <p>Entenderemos los tres estados de Git: <em>Working Directory</em> (Trabajo), <em>Staging Area</em> (Preparación) y <em>Repository</em> (Historial).</p>
+    <ol>
+        <li>Cree una carpeta llamada <code>mi-primer-proyecto</code>.</li>
+        <li>Abra la terminal en esa carpeta e inicie el repositorio:
+            <div class="code-block">git init</div>
+        </li>
+        <li>Cree un archivo <code>index.html</code>.</li>
+        <li>Verifique el estado (Note que el archivo está en rojo/untracked):
+            <div class="code-block">git status</div>
+        </li>
+        <li>Pase el archivo al área de preparación (<em>Staging</em>):
+            <div class="code-block">git add index.html</div>
+        </li>
+        <li>Tome la "foto" o guarde la versión (<em>Commit</em>):
+            <div class="code-block">git commit -m "Creación inicial del proyecto"</div>
+        </li>
+    </ol>
+
+    <h4>Nivel 2: La Nube (Conectando con GitHub)</h4>
+    <p>El código en su PC corre riesgo si el disco duro falla. Vamos a la nube.</p>
+    <ol>
+        <li>Cree una cuenta en <a href="https://github.com/" target="_blank">GitHub.com</a>.</li>
+        <li><strong>Seguridad:</strong> Configure un <em>Personal Access Token</em> (Classic) o use la autenticación web al momento de hacer push.</li>
+        <li>Cree un <strong>Nuevo Repositorio</strong> en GitHub llamado <code>taller-git-sena</code>.</li>
+        <li>Conecte su repositorio local con el de la nube:
+            <div class="code-block">
+git remote add origin https://github.com/SU_USUARIO/taller-git-sena.git<br>
+git branch -M main<br>
+git push -u origin main
+            </div>
+        </li>
+    </ol>
+
+    <h4>Nivel 3: Trabajo en Equipo - Ingeniería (Ramas/Branches)</h4>
+    <p><strong>Regla de Oro:</strong> NUNCA trabaje directamente sobre la rama <code>main</code>. La rama <code>main</code> es sagrada y solo debe tener código funcional.</p>
+    <ol>
+        <li>Cree una rama para una nueva funcionalidad:
+            <div class="code-block">git checkout -b feature-login</div>
+        </li>
+        <li>Modifique el archivo <code>index.html</code> agregando un formulario de login ficticio.</li>
+        <li>Guarde los cambios en esta rama:
+            <div class="code-block">
+git add .<br>
+git commit -m "Agrega formulario de login"
+            </div>
+        </li>
+        <li>Vuelva a la rama principal (Verá que el código del login desaparece, ¡es la máquina del tiempo!):
+            <div class="code-block">git checkout main</div>
+        </li>
+        <li>Fusione los cambios (Traiga lo de la rama feature a main):
+            <div class="code-block">git merge feature-login</div>
+        </li>
+    </ol>
+
+    <h4>Nivel 4: Experto - Colaboración Profesional</h4>
+    <p>En equipos grandes, no hacemos <code>merge</code> directo. Usamos <strong>Pull Requests (PR)</strong> para revisión de código.</p>
+    <ol>
+        <li>Cree una nueva rama <code>feature-footer</code>.</li>
+        <li>Haga cambios y haga <code>commit</code>.</li>
+        <li>Suba la rama a GitHub (no a main):
+            <div class="code-block">git push origin feature-footer</div>
+        </li>
+        <li>Vaya a GitHub.com. Verá un botón verde "Compare & pull request".</li>
+        <li>Cree el PR, asigne un revisor y simule la aprobación y fusión desde la interfaz web.</li>
+    </ol>
+
+    <h3>3.4 Actividad de Transferencia: Reto Colaborativo "Open Source Simulado"</h3>
+    <p><strong>Instrucción:</strong> Formen parejas (Aprendiz A y Aprendiz B).</p>
+    <ol>
+        <li><strong>Aprendiz A:</strong> Crea un repositorio en GitHub llamado <code>proyecto-colaborativo</code>. Agrega a Aprendiz B como "Collaborator" en la configuración.</li>
+        <li><strong>Aprendiz B:</strong> Clona el repositorio en su máquina.
+            <div class="code-block">git clone [URL_DEL_REPO]</div>
+        </li>
+        <li><strong>Conflicto Intencional:</strong>
+            <ul>
+                <li>Ambos editan la <strong>mismo línea</strong> del mismo archivo al mismo tiempo en sus computadores locales.</li>
+                <li>Aprendiz A hace <code>add</code>, <code>commit</code> y <code>push</code>.</li>
+                <li>Aprendiz B hace <code>add</code>, <code>commit</code> e intenta hacer <code>push</code>.</li>
+            </ul>
+        </li>
+        <li><strong>Resolución:</strong>
+            <ul>
+                <li>Aprendiz B recibirá un error. Debe ejecutar <code>git pull</code>.</li>
+                <li>Git indicará un <strong>CONFLICTO</strong>.</li>
+                <li>Aprendiz B debe abrir el archivo, decidir qué código se queda (o combinar ambos), guardar, y finalizar el proceso:</li>
+            </ul>
+            <div class="code-block">
+git add .<br>
+git commit -m "Resolviendo conflicto de fusión"<br>
+git push origin main
+            </div>
+        </li>
+    </ol>
+
+    <h2>4. PLANTEAMIENTO DE EVIDENCIAS DE APRENDIZAJE</h2>
+    <table>
+        <tr>
+            <th>Tipo de Evidencia</th>
+            <th>Descripción de la Evidencia</th>
+            <th>Criterios de Evaluación</th>
+        </tr>
+        <tr>
+            <td><strong>De Conocimiento</strong></td>
+            <td><strong>Cuestionario:</strong> Estados de Git, comandos básicos y flujo de trabajo.</td>
+            <td>Identifica correctamente la diferencia entre <code>git add</code>, <code>git commit</code> y <code>git push</code>.</td>
+        </tr>
+        <tr>
+            <td><strong>De Desempeño</strong></td>
+            <td><strong>Observación Directa:</strong> Ejecución de comandos en terminal durante el Reto Colaborativo.</td>
+            <td>Utiliza la consola de comandos (Git Bash) fluidamente. Resuelve conflictos de fusión sin perder código.</td>
+        </tr>
+        <tr>
+            <td><strong>De Producto</strong></td>
+            <td><strong>Repositorio en GitHub:</strong> URL del repositorio del "Reto Colaborativo".</td>
+            <td>El repositorio contiene:<br>1. Historial de commits claro (Network Graph).<br>2. Archivo <code>README.md</code> con descripción del proyecto.<br>3. Evidencia de participación de ambos aprendices.</td>
+        </tr>
+    </table>
+
+    <h2>5. GLOSARIO DE TÉRMINOS</h2>
+    <ul>
+        <li><strong>Repositorio (Repo):</strong> El lugar donde se almacena el proyecto y su historial de versiones (puede ser local o remoto).</li>
+        <li><strong>Commit:</strong> Es como tomar una "foto" del estado actual del proyecto. Es la unidad básica de guardado en Git.</li>
+        <li><strong>Branch (Rama):</strong> Una línea de tiempo paralela. Permite trabajar en nuevas funciones sin afectar el código principal (<code>main</code>).</li>
+        <li><strong>Merge (Fusión):</strong> Acción de unir dos ramas. Por ejemplo, integrar una funcionalidad nueva a la rama principal.</li>
+        <li><strong>Pull Request (PR):</strong> Petición para fusionar cambios en un repositorio remoto. Permite la revisión de código antes de aceptar los cambios.</li>
+        <li><strong>Conflict (Conflicto):</strong> Ocurre cuando dos personas modifican la misma parte de un archivo y Git no sabe cuál versión conservar automáticamente.</li>
+        <li><strong>Fork:</strong> Una copia personal de un repositorio ajeno. Muy usado en Open Source.</li>
+        <li><strong>Clone:</strong> Descargar una copia exacta de un repositorio remoto a tu máquina local.</li>
+    </ul>
+
+    <h2>6. REFERENCIAS BIBLIOGRÁFICAS</h2>
+    <ul>
+        <li><a href="https://git-scm.com/doc">Documentación Oficial de Git</a></li>
+        <li><a href="https://education.github.com/">GitHub Education</a></li>
+        <li>Pro Git Book (Scott Chacon): Disponible gratuitamente en el sitio oficial de Git.</li>
+    </ul>
+
+</div>
+
+<footer>
+    <p>Control del Documento<br>
+    Autor: Instructor Área de Sistemas | Instructor SENA | Octubre 2023</p>
+</footer>
+
+</body>
+</html>
