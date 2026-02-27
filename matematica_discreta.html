@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Discreta - SENA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Matemática Discreta</h1>
+        <p>Fundamentos para el Análisis y Desarrollo de Software</p>
+    </div>
+</header>
+
+<main class="container">
+    <section id="logica">
+        <h2>Lógica</h2>
+        <div class="content">
+            <p>Estudio de proposiciones, conectivos lógicos y tablas de verdad.</p>
+            <div class="interactive-panel">
+                <h3>Generador de Tablas de Verdad</h3>
+                <div class="controls">
+                    <label>Proposición P: <input type="checkbox" id="propP"> (Verdadero/Falso)</label>
+                    <label>Proposición Q: <input type="checkbox" id="propQ"> (Verdadero/Falso)</label>
+                    <select id="logicOp">
+                        <option value="AND">AND (∧)</option>
+                        <option value="OR">OR (∨)</option>
+                        <option value="NOT">NOT (¬P)</option>
+                        <option value="IMPLIES">IMPLIES (→)</option>
+                    </select>
+                    <button onclick="calculateLogic()">Calcular</button>
+                </div>
+                <div id="logicResult" class="result-box">Result: -</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conjuntos">
+        <h2>Teoría de Conjuntos</h2>
+        <div class="content">
+            <p>Conjuntos, subconjuntos y operaciones básicas (Unión, Intersección).</p>
+            <div class="interactive-panel">
+                <h3>Visualizador de Conjuntos</h3>
+                <div class="controls">
+                    <button onclick="drawVenn('UNION')">Unión (A ∪ B)</button>
+                    <button onclick="drawVenn('INTERSECTION')">Intersección (A ∩ B)</button>
+                    <button onclick="drawVenn('DIFFERENCE')">Diferencia (A - B)</button>
+                </div>
+                <canvas id="vennCanvas" width="300" height="200"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="grafos">
+        <h2>Grafos</h2>
+        <div class="content">
+            <p>Estructuras formadas por vértices y aristas: Caminos, Ciclos, Árboles.</p>
+            <div class="interactive-panel">
+                <h3>Visualizador de Grafos</h3>
+                <button onclick="addNode()">Agregar Nodo</button>
+                <button onclick="clearGraph()">Limpiar</button>
+                <canvas id="graphCanvas" width="400" height="300"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="combinatoria">
+        <h2>Combinatoria</h2>
+        <div class="content">
+            <p>Técnicas de conteo: Permutaciones y Combinaciones.</p>
+            <div class="interactive-panel">
+                <h3>Calculadora</h3>
+                <label>n: <input type="number" id="combN" min="0" value="5"></label>
+                <label>r: <input type="number" id="combR" min="0" value="3"></label>
+                <button onclick="calculateCombinatorics()">Calcular</button>
+                <div id="combResult" class="result-box">
+                    <p>P(n,r): -</p>
+                    <p>C(n,r): -</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="boole">
+        <h2>Álgebra de Boole</h2>
+        <div class="content">
+            <p>Operaciones lógicas fundamentales para el diseño de circuitos digitales.</p>
+            <div class="interactive-panel">
+                <h3>Simulador de Compuertas</h3>
+                <div class="gate-simulator">
+                    <div class="gate-controls">
+                        <button class="input-btn" id="btnA" onclick="toggleInput('A')">A: 0</button>
+                        <button class="input-btn" id="btnB" onclick="toggleInput('B')">B: 0</button>
+                    </div>
+                    <div class="gates">
+                        <div class="gate">
+                            <span>AND: </span><span id="outAND">0</span>
+                        </div>
+                        <div class="gate">
+                            <span>OR: </span><span id="outOR">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 SENA - Centro de Servicios y Gestión Empresarial</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
