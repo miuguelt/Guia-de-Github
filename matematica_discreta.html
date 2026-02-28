@@ -16,10 +16,24 @@
 </header>
 
 <main class="container">
+    <section id="intro">
+        <h2>Mapa Conceptual General</h2>
+        <div class="content intro-content">
+            <p>La Matemática Discreta es el lenguaje fundamental de las Ciencias de la Computación. A diferencia de las matemáticas continuas (como el cálculo), se enfoca en estructuras que son contables y separadas, ideales para el procesamiento digital y la lógica de programación.</p>
+            <img src="img/mapa_conceptual.jpg" alt="Mapa Conceptual de Matemática Discreta" class="hero-image">
+        </div>
+    </section>
+
     <section id="logica">
-        <h2>Lógica</h2>
+        <h2>Lógica Proposicional</h2>
         <div class="content">
-            <p>Estudio de proposiciones, conectivos lógicos y tablas de verdad.</p>
+            <p>La base de la toma de decisiones en el software. Estudia las <strong>proposiciones</strong> (afirmaciones que son Verdaderas o Falsas) y cómo se combinan usando <strong>conectivos lógicos</strong>.</p>
+            <ul>
+                <li><strong>AND (Conjunción - ∧):</strong> Verdadera solo si ambas son verdaderas.</li>
+                <li><strong>OR (Disyunción - ∨):</strong> Verdadera si al menos una es verdadera.</li>
+                <li><strong>NOT (Negación - ¬):</strong> Invierte el valor de verdad.</li>
+                <li><strong>IMPLIES (Condicional - →):</strong> Falsa solo si la premisa es verdadera y la conclusión es falsa.</li>
+            </ul>
             <div class="interactive-panel">
                 <h3>Generador de Tablas de Verdad</h3>
                 <div class="controls">
@@ -41,7 +55,12 @@
     <section id="conjuntos">
         <h2>Teoría de Conjuntos</h2>
         <div class="content">
-            <p>Conjuntos, subconjuntos y operaciones básicas (Unión, Intersección).</p>
+            <p>Es el estudio de colecciones de objetos matemáticos. En bases de datos relacionales, cada tabla es un conjunto de registros. Las consultas (SQL) operan basadas en estos principios.</p>
+            <ul>
+                <li><strong>Unión (A ∪ B):</strong> Elementos que pertenecen a A, a B o a ambos. (Equivalente lógico al OR).</li>
+                <li><strong>Intersección (A ∩ B):</strong> Elementos que pertenecen tanto a A como a B. (Equivalente lógico al AND).</li>
+                <li><strong>Diferencia (A - B):</strong> Elementos que pertenecen a A pero no pertenecen a B.</li>
+            </ul>
             <div class="interactive-panel">
                 <h3>Visualizador de Conjuntos</h3>
                 <div class="controls">
@@ -55,9 +74,14 @@
     </section>
 
     <section id="grafos">
-        <h2>Grafos</h2>
+        <h2>Teoría de Grafos</h2>
         <div class="content">
-            <p>Estructuras formadas por vértices y aristas: Caminos, Ciclos, Árboles.</p>
+            <p>Un grafo es una estructura compuesta por un conjunto de <strong>Vértices</strong> (o nodos) y un conjunto de <strong>Aristas</strong> (conexiones). Son vitales para modelar redes (internet, sociales), sistemas de rutas (GPS) y jerarquías (árboles de directorios).</p>
+            <ul>
+                <li><strong>Caminos:</strong> Secuencia de vértices conectados.</li>
+                <li><strong>Ciclos:</strong> Un camino que empieza y termina en el mismo vértice.</li>
+                <li><strong>Árboles:</strong> Un grafo conexo sin ciclos. Crucial en estructuras de datos como bases de datos indexadas (B-Trees) o el DOM en HTML.</li>
+            </ul>
             <div class="interactive-panel">
                 <h3>Visualizador de Grafos</h3>
                 <button onclick="addNode()">Agregar Nodo</button>
@@ -68,9 +92,13 @@
     </section>
 
     <section id="combinatoria">
-        <h2>Combinatoria</h2>
+        <h2>Combinatoria y Conteo</h2>
         <div class="content">
-            <p>Técnicas de conteo: Permutaciones y Combinaciones.</p>
+            <p>Estudia la enumeración y combinación de elementos de conjuntos finitos. Es fundamental para el análisis de algoritmos (determinar su eficiencia temporal y espacial) y la criptografía.</p>
+            <ul>
+                <li><strong>Permutación P(n,r):</strong> Arreglos de 'r' objetos extraídos de 'n' elementos, donde <strong>el orden sí importa</strong> (ej. contraseñas, podios). Fórmula: <code>P = n! / (n - r)!</code></li>
+                <li><strong>Combinación C(n,r):</strong> Selección de 'r' objetos extraídos de 'n' elementos, donde <strong>el orden NO importa</strong> (ej. equipos de trabajo, loterías). Fórmula: <code>C = n! / (r! * (n - r)!)</code></li>
+            </ul>
             <div class="interactive-panel">
                 <h3>Calculadora</h3>
                 <label>n: <input type="number" id="combN" min="0" value="5"></label>
@@ -87,7 +115,27 @@
     <section id="boole">
         <h2>Álgebra de Boole</h2>
         <div class="content">
-            <p>Operaciones lógicas fundamentales para el diseño de circuitos digitales.</p>
+            <p>Es la estructura algebraica fundamental de la lógica proposicional, usando valores binarios (0 y 1). Es la base teórica sobre la cual se construyen los procesadores, la memoria y toda la Electrónica Digital moderna.</p>
+            <div class="laws-grid">
+                <div>
+                    <h4>Leyes Fundamentales:</h4>
+                    <ul>
+                        <li><strong>Conmutativa:</strong> A + B = B + A ; A · B = B · A</li>
+                        <li><strong>Asociativa:</strong> A + (B + C) = (A + B) + C</li>
+                        <li><strong>Distributiva:</strong> A · (B + C) = A·B + A·C</li>
+                        <li><strong>De Morgan:</strong> ¬(A + B) = ¬A · ¬B</li>
+                        <li><strong>Absorción:</strong> A + (A · B) = A</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Aplicaciones:</h4>
+                    <ul>
+                        <li>Diseño Digital y Hardware</li>
+                        <li>Simplificación de Expresiones Booleanas (código más limpio y rápido)</li>
+                        <li>Circuitos Lógicos Integrados</li>
+                    </ul>
+                </div>
+            </div>
             <div class="interactive-panel">
                 <h3>Simulador de Compuertas</h3>
                 <div class="gate-simulator">

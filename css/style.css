@@ -77,12 +77,62 @@ button:hover {
     background-color: #e05d0b;
 }
 
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 2px solid var(--sena-green);
+}
+
+.intro-content {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+ul {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+code {
+    background-color: #444;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffd700;
+}
+
+.laws-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .laws-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 canvas {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     display: block;
     margin: 1rem auto;
+    max-width: 100%;
 }
 
 .result-box {
