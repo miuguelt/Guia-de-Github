@@ -1,0 +1,172 @@
+:root {
+    --sena-green: #39a900;
+    --sena-orange: #fc7323;
+    --dark-bg: #1a1a1a;
+    --light-text: #f0f0f0;
+    --card-bg: #2a2a2a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+header {
+    background-color: var(--sena-green);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h2 {
+    color: var(--sena-orange);
+    border-bottom: 2px solid var(--sena-orange);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.interactive-panel {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border-left: 5px solid var(--sena-green);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: var(--sena-orange);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e05d0b;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 2px solid var(--sena-green);
+}
+
+.intro-content {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+ul {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+code {
+    background-color: #444;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffd700;
+}
+
+.laws-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .laws-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+canvas {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+.result-box {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--sena-green);
+    font-size: 1.2rem;
+}
+
+.gate-simulator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gate-controls {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.gates {
+    display: flex;
+    gap: 2rem;
+}
+
+.input-btn {
+    min-width: 60px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #111;
+    color: #888;
+    margin-top: 4rem;
+}
